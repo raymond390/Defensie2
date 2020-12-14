@@ -64,5 +64,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "warn",
-    category: "Informatie"
+    category: "Informatie",
+    description: "Warnt iemand in de discord",
 }

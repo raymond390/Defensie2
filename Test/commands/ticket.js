@@ -70,5 +70,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "ticket",
-    category: "Informatie"
+    category: "Informatie",
+    description: "Maakt een support kanaal aan",
 }

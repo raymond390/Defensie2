@@ -100,5 +100,6 @@ async function promptMessage(message, author, time, reactions) {
 
 module.exports.help = {
     name: "kick",
-    category: "Informatie"
+    category: "Informatie",
+    description: "Kickt iemand uit de discord",
 }
