@@ -14,10 +14,10 @@ module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.reply("Geen Dienst opgegeven.");
 
     if (!args[1]) return message.reply("Gelieve een type training op te geven.");
-    if (!args[2]) return message.reply("Gelieve een type training op te geven.");
-    if (!args[3]) return message.reply("Gelieve een type training op te geven.");
-    if (!args[4]) return message.reply("Gelieve een type training op te geven.");
-    if (!args[5]) return message.reply("Gelieve een type training op te geven.");
+    if (!args[2]) return message.reply("Gelieve een co host op te geven.");
+    if (!args[3]) return message.reply("Gelieve een datum op te geven.");
+    if (!args[4]) return message.reply("Gelieve een tijd op te geven.");
+    if (!args[5]) return message.reply("Gelieve een opmerking  te geven.");
    
    
     var botEmbed = new discord.MessageEmbed()
