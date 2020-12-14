@@ -22,11 +22,11 @@ module.exports.run = async (client, message, args) => {
     var botEmbed = new discord.MessageEmbed()
     
     .setTitle('Defensie')
-    .setColor("#0099ff")
+    .setColor("#f00c0c")
     .setTimestamp()
     .addFields(
         {name:" ** Training **" , value:(dienst)},
-        {name:" ** Dienst **" , value: (type) },
+        {name:" ** Type **" , value: (type) },
         {name:" ** Host **" , value:` ${message.author} `},
         {name:" ** co-Host **" , value: (co) },
         {name:" ** Datum **" , value: (datum) },
@@ -47,6 +47,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "training",
-    description: ".training dienst-type-co host-datum-tijd-opmerkingen",
+    description: ".training Type-type-co host-datum-tijd-opmerkingen",
     category: "Algemeen"
 }
