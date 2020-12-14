@@ -13,8 +13,8 @@ module.exports.run = async (client, message, args) => {
     .setColor("#0099ff")
     .setTimestamp()
     .addFields(
-        {name:" ** Training **" , value:` ${test} `},
-        {name:" ** Dienst **" , value:` ${dienst} `},
+        {name:" ** Training **" , value:(test)},
+        {name:" ** Dienst **" , value: (dienst) },
         {name:" ** Type-Training **" , value:` ${type} `},
         {name:" ** Host **" , value:` ${message.author} `}
     )
