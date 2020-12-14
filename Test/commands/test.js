@@ -2,9 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-
-
-    var channel = message.member.guild.channels.cache.get("778300362607951912");
+    var channel = message.member.guild.channels.cache.get("779016346825523220");
 
     dienst = args[0];
     type = args[1];
@@ -16,7 +14,8 @@ module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.reply("Geen Training opgegeven.");
 
     if (!args[1]) return message.reply("Gelieve een type op te geven.");
-
+    
+    if (!channel) return;
     var botEmbed = new discord.MessageEmbed()
     .setTitle('Defensie')
     .setColor("#0099ff")
