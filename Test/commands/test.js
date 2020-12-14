@@ -11,10 +11,13 @@ module.exports.run = async (client, message, args) => {
      tijd = args[4];
      opmerking = args[5];
    
-    if (!args[0]) return message.reply("Geen Training opgegeven.");
+    if (!args[0]) return message.reply("Geen Dienst opgegeven.");
 
-    if (!args[1]) return message.reply("Gelieve een type op te geven.");
-    
+    if (!args[1]) return message.reply("Gelieve een type training op te geven.");
+    if (!args[2]) return message.reply("Gelieve een type training op te geven.");
+    if (!args[3]) return message.reply("Gelieve een type training op te geven.");
+    if (!args[4]) return message.reply("Gelieve een type training op te geven.");
+    if (!args[5]) return message.reply("Gelieve een type training op te geven.");
    
    
     var botEmbed = new discord.MessageEmbed()
@@ -40,7 +43,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!channel) return
 
-    return message.channel.send(botEmbed);
+    channel.send(botEmbed);
 }
 
 module.exports.help = {
