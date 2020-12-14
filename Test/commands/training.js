@@ -11,12 +11,12 @@ module.exports.run = async (client, message, args) => {
      tijd = args[4];
      opmerking = args[5];
    
-    if (!args[0]) return message.reply("Gelieve een Dienst opgegeven.");
-    if (!args[1]) return message.reply("Gelieve een type training op te geven.");
-    if (!args[2]) return message.reply("Gelieve een co host op te geven.");
-    if (!args[3]) return message.reply("Gelieve een datum op te geven.");
-    if (!args[4]) return message.reply("Gelieve een tijd op te geven.");
-    if (!args[5]) return message.reply("Gelieve een opmerking  te geven.");
+    if (!args[0]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
+    if (!args[1]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
+    if (!args[2]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
+    if (!args[3]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
+    if (!args[4]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
+    if (!args[5]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen.");
    
    
     var botEmbed = new discord.MessageEmbed()
