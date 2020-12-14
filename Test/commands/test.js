@@ -36,10 +36,10 @@ module.exports.run = async (client, message, args) => {
     .setImage('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg')
     .setFooter('Defensie', '');
 
-    var channel = message.member.guild.channels.cache.get("779016346825523220");
+    var channel = message.member.guild.channels.cache.get("778300362607951912");
 
     if (!channel) return
-    
+
     return message.channel.send(botEmbed);
 }
 
