@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
     .addFields(
         {name:" ** Training **" , value:(dienst)},
         {name:" ** Dienst **" , value: (type) },
-        {name:" ** Host **" , value:` ${message.author} `}.
+        {name:" ** Host **" , value:` ${message.author} `},
         {name:" ** co-Host **" , value: (co) },
         {name:" ** Datum **" , value: (datum) },
         {name:" ** Tijd **" , value: (tijd) },
