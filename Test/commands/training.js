@@ -48,5 +48,5 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "training",
     description: ".training Type-type-co host-datum-tijd-opmerkingen",
-    category: "Algemeen"
+    category: "Informatie"
 }
