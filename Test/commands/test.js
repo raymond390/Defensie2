@@ -11,8 +11,7 @@ module.exports.run = async (client, message, args) => {
      tijd = args[4];
      opmerking = args[5];
    
-    if (!args[0]) return message.reply("Geen Dienst opgegeven.");
-
+    if (!args[0]) return message.reply("Gelieve een Dienst opgegeven.");
     if (!args[1]) return message.reply("Gelieve een type training op te geven.");
     if (!args[2]) return message.reply("Gelieve een co host op te geven.");
     if (!args[3]) return message.reply("Gelieve een datum op te geven.");
@@ -48,6 +47,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "training",
-    description: "",
+    description: ".training dienst-type-co host-datum-tijd-opmerkingen",
     category: "Algemeen"
 }
