@@ -1,10 +1,10 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-    var test = args.slice(1).join(" ");
-    var dienst = args.slice(3).join(" ");
-    var type = args.slice(5).join(" ");
-    var a = args.slice(0).join(" ");
+    var test = args.slice(1).join(1);
+    var dienst = args.slice(3).join(2);
+    var type = args.slice(5).join(3);
+    var a = args.slice(0).join(4);
     if (!args[0]) return message.reply("Geen Training opgegeven.");
 
     if (!args[1]) return message.reply("Gelieve een redenen op te geven.");
