@@ -15,10 +15,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.reply("Gelieve een type op te geven.");
     
-    var channel = member.guild.channels.cache.get('778617880118820874');
-
-    if (!channel) return;
-
+   
    
     var botEmbed = new discord.MessageEmbed()
     
