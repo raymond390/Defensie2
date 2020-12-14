@@ -69,7 +69,7 @@ client.on("guildMemberAdd", member => {
     });
 
 
-    var channel = member.guild.channels.cache.get('778617880118820874');
+    var channel = member.guild.channels.cache.get('742493428272726066');
 
     if (!channel) return;
 
@@ -89,13 +89,13 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberRemove", member => {
 
-    var channel = member.guild.channels.cache.get('778617880118820874');
+    var channel = member.guild.channels.cache.get('742493428272726066');
 
     if (!channel) return;
 
     var leaveEmbed = new discord.MessageEmbed()
         .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-        .setColor("#f00c0c")
+        .setColor("#FF0000")
         .setFooter("Gebruiker geleaved")
         .setTimestamp();
 
