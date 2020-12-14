@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args) => {
                 
     )
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
-    .setImage('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg')
+    .setImage('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpghttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.defensie.nl%2Forganisatie%2Fmarechaussee%2Feenheden%2Fopleidings-trainings-en-kenniscentrum&psig=AOvVaw1lpXpFCcnaxDZA3fjhAybL&ust=1608050012966000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjrvKTzze0CFQAAAAAdAAAAABAD')
     .setFooter('Defensie', '');
 
     var channel = message.member.guild.channels.cache.get("779617907587940352");
