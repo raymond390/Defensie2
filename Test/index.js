@@ -108,7 +108,7 @@ client.on("ready", async () => {
 
     console.log(`${client.user.username} is online.`);
 
-    client.user.setActivity("Werken bij defensie je moet het maar kunnen", { type: "WATCHING" });
+    client.user.setActivity("Kazerne Noord-Holland V3 {coming soon}", { type: "WATCHING" });
 
 });
 
