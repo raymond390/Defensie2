@@ -2,7 +2,8 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
     test = args[0];
-    dienst = args.splice(1, args.length).join(" ");
+    dienst = args[1];
+    type = args[2];
    
     if (!args[0]) return message.reply("Geen Training opgegeven.");
 
@@ -15,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     .addFields(
         {name:" ** Training **" , value:(test)},
         {name:" ** Dienst **" , value: (dienst) },
-        {name:" ** Type-Training **" , value:` ${type} `},
+        {name:" ** Type-Training **" , value:(type) },
         {name:" ** Host **" , value:` ${message.author} `}
     )
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
