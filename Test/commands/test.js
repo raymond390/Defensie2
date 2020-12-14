@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    var channel = message.member.guild.channels.cache.get("779016346825523220");
+     
 
     dienst = args[0];
     type = args[1];
@@ -15,8 +15,13 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.reply("Gelieve een type op te geven.");
     
+    var channel = member.guild.channels.cache.get('778617880118820874');
+
     if (!channel) return;
+
+   
     var botEmbed = new discord.MessageEmbed()
+    
     .setTitle('Defensie')
     .setColor("#0099ff")
     .setTimestamp()
@@ -28,9 +33,7 @@ module.exports.run = async (client, message, args) => {
         {name:" ** Datum **" , value: (datum) },
         {name:" ** Tijd **" , value: (tijd) },
         {name:" ** Opmerking **" , value: (opmerking) },
-
-        
-        
+                
     )
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
     .setImage('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg')
