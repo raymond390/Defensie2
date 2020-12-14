@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
      try {
 
-         var text = "**Defensie** \n\n **__Commands__** \n !hallo - Geeft een hallo terug. \n !info - Geeft info.";
+         var text = "**Defensie** \n\n **__Commands__** \n .hallo - Geeft een hallo terug. \n .info - Geeft info.";
 
          message.author.send(text);
 
@@ -30,7 +30,8 @@ module.exports.run = async (client, message, args) => {
 
     });
 
-
+    var response = "**Bot commands**\n\n";
+    var general = "**__Algemeen__**\n";
     var info = "\n**__Informatie__**\n";
 
     for (let i = 0; i < commandList.length; i++) {
