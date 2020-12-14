@@ -30,8 +30,7 @@ module.exports.run = async (client, message, args) => {
 
     });
 
-    var response = "**Bot commands**\n\n";
-    var general = "**__Algemeen__**\n";
+
     var info = "\n**__Informatie__**\n";
 
     for (let i = 0; i < commandList.length; i++) {
