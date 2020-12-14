@@ -26,9 +26,9 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
     .addFields(
         {name:" ** Training **" , value:(dienst)},
-        {name:" ** Type **" , value: (type) },
+        {name:" ** Type-Training **" , value: (type) },
         {name:" ** Host **" , value:` ${message.author} `},
-        {name:" ** co-Host **" , value: (co) },
+        {name:" ** Co-Host **" , value: (co) },
         {name:" ** Datum **" , value: (datum) },
         {name:" ** Tijd **" , value: (tijd) },
         {name:" ** Opmerking **" , value: (opmerking) },
