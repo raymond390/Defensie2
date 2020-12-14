@@ -89,7 +89,7 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberRemove", member => {
 
-    var channel = member.guild.channels.cache.get('742493428272726066');
+    var channel = member.guild.channels.cache.get('778300362607951912');
 
     if (!channel) return;
 
