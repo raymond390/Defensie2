@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
 
-    dienst = args[0];
-    type = args[1];
+     dienst = args[0];
+     type = args[1];
      co = args[2];
      datum = args[3];
      tijd = args[4];
