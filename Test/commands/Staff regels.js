@@ -44,3 +44,8 @@ return message.channel.send(botEmbed);
     }
 }
 
+module.exports.help = {
+    name: "staffregels",
+    description: "Geeft al de verschillende commands",
+    category: "Informatie"
+}
