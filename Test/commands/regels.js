@@ -20,8 +20,8 @@ module.exports.run = async (client, message, argument) => {
     4,niet staff vest aan als je kamr/landmacht bent.!
     5,Luister altijd naar HR+&HC+.!
     6,ALS staff AA/admin-aubse zal doen kan deze onslagen worden door Managerment.
-    7,ga je zueren/vragen om promo dan wordt je onslagen door OC+
-    8,zal je niet aan deze regel houden is het jammr voor je ranks.
+    7,ga je zeuren/vragen om promo dan wordt je onslagen door OC+
+    8,zal je niet aan deze regel houden is het jammer voor je ranks.
     9,OF mag ook niet meer over de lijne waarom te veel aubse dan doe je dit maar als bezeoker.
     10, GEEN  autos naar gate 
     11. geen hoger outfit aan
