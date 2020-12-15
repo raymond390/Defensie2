@@ -103,18 +103,11 @@ client.on("guildMemberRemove", member => {
 
 });
 
-const activities_list = [
-    "Kazerne Noord-Holland", 
-    ".help",
-    "test", 
-    "test"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
 
-bot.on('ready', () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        bot.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
-    }, 10000); // Runs this every 10 seconds.
+var activevar = ["Karzerne Noord-Holland", ".help", "", ""];
+var activities = activevar[Math.floor(Math.random()*activevar.length)];
+client.on('ready', () => {
+    client.user.setActivity(activities);
 });
 
 client.on("messageDelete", messageDeleted => {
