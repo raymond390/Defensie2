@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
      try {
 
-         var text = "Dit is een Discord Bot gemaakt voor Karrzerne noor holand \n\n Made By Raymond#1362 \n \n ";
+         var text = "Dit is een Discord Bot gemaakt voor Karzerne noor holand \n\nMade By **Raymond#1362** \n \n ";
 
          message.author.send(text);
 
