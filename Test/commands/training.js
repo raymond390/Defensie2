@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
      co = args[2];
      datum = args[3];
      tijd = args[4];
-     opmerking = args[5];
+     var opmerking = args.slice(1).join(" ");
    
     if (!args[0]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
     if (!args[1]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
         {name:" ** Co-Host **" , value: (co) },
         {name:" ** Datum **" , value: (datum) },
         {name:" ** Tijd **" , value: (tijd) },
-        {name:" ** Opmerking **" , value: (opmerking) },
+        {name:" ** Opmerking **" , value:` ${opmerking}`},
                 
     )
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
