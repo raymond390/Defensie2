@@ -45,7 +45,7 @@ return message.channel.send(botEmbed);
 }
 
 module.exports.help = {
-    name: "regels",
+    name: "staff",
     description: "Geeft al de verschillende commands",
     category: "Informatie"
 }
