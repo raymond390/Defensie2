@@ -5,7 +5,7 @@ module.exports.run = async (client, message, argument) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
     
-    const categoryID = "767842762090479646";
+    const categoryID = "767840049299062824";
 
     
 
@@ -13,21 +13,34 @@ module.exports.run = async (client, message, argument) => {
 
     var botEmbed = new discord.MessageEmbed()
     .setTitle('Staff Regels')
-    .setDescription(`Staff regels
-
-    -Ben je voor een tijd niet actief meld dit dan in #『🔒』inactiviteit-log.
-    -Er word van je verwacht vaak online te zijn en trainingen te geven tenzij je in de #『🔒』inactiviteit-log staat.
-    -Heb respect voor anderen.
-    -Je gaat niet vragen voor een rank-up dit word vanzelf bepaald wanneer je er een krijgt.
-    -Als je een ticket claimed zeg dan !claim, je kan altijd nog anderen toevoegen aan de ticket.
-    -Ben je klaar met de ticket zeg dan !close zodat er niet 10 tickets openstaan.
-    -Je gaat niet iemand suicidale gedachtes geven!!
-    -We gaan nietmet ziektes schelden/praten dit kan gevoelig zijn bij sommigen.
-    -Niet onnodig pingen en zeker niet spam pingen. 
-    
-    -Mocht je enige vragen hebben staat het staff team altijd voor je klaar in #『🔒』staffchat.
-    -Mocht je hier nog iets aan toe willen voegen kopieer deze tekst en voeg je regel toe.
-    -Het overtreden van de regels kan tot demote/ontslag leiden. `)
+    .setDescription(`nederlandse 
+    1,niet aubse met staff vesten.
+    2,niet tegen hoger staff in gaan zal je dit doen kan tot warn/demot leiden.
+    3,niet bemoien met jails van andere staff-leden.
+    4,niet staff vest aan als je kamr/landmacht bent.!
+    5,Luister altijd naar HR+&HC+.!
+    6,ALS staff AA/admin-aubse zal doen kan deze onslagen worden door Managerment.
+    7,ga je zueren/vragen om promo dan wordt je onslagen door OC+
+    8,zal je niet aan deze regel houden is het jammr voor je ranks.
+    9,OF mag ook niet meer over de lijne waarom te veel aubse dan doe je dit maar als bezeoker.
+    10, GEEN  autos naar gate 
+    11. geen hoger outfit aan
+    12, niet als landmacht bij kmar staan of kmar bij landmacht.
+    13, staff leden morgen niet meer on noding fly doen 
+    (ENGLES)-------------------------------------------------------------------------
+    1, please do not use staff vests.
+    2, do not go against higher staff you will do this can lead to warn / demot.
+    3, don't bother with other staff members' jails.
+    4, do not wear staff vest if you are kamr / army.!
+    5, Always listen to HR + & HC +.!
+    6, IF staff will do AA / admin-please, it can be canceled by Managerment.
+    7, if you suck / ask for promo, you will be knocked out by OC +
+    8, you won't stick to this rule it's too bad for your ranks.
+    9, OR is not allowed anymore, why too much please do this as a user.
+    10, NO cars to gate
+    11. no higher outfit
+    12, do not stand as army with kmar or kmar with army.
+    13, staff members will no longer do on noding fly tomorrow`)
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
     .setImage('')
     .setTimestamp()
