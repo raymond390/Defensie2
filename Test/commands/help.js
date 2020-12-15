@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
      try {
 
-         var text = "**Kazerne Noor Holland** \n\n\nBot Gemaakt door **Raymond#1362** \n ";
+         var text = "**Kazerne Noor Holland** \nBot Gemaakt door **Raymond#1362** \nRoblox game gemaakt bij **𝐉𝐚𝐦𝐲𝐓𝐒𝐆#3100**\n \n ";
 
          message.author.send(text);
 
