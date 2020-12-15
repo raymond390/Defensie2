@@ -1,11 +1,13 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, argument) => {
-    const categoryID = "767843900823175168";
-
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+    
+    const categoryID = "767843900823175168";
+
+    
 
     if (message.channel.parentID == categoryID) {
 
