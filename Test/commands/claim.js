@@ -1,10 +1,10 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, argument) => {
-    const categoryID = "767843900823175168";
-
-    if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet doen");
-
+    if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet doen");   
+     
+   const categoryID = "767843900823175168";
+  
     if (message.channel.parentID == categoryID) {
 
     var botEmbed = new discord.MessageEmbed()
