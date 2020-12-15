@@ -3,9 +3,6 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, argument) => {
     if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet doen");   
      
-   const categoryID = "761879667124600842";
-  
-    if (message.channel.parentID == categoryID) {
 
     var botEmbed = new discord.MessageEmbed()
     .setTitle('Claim')
@@ -16,15 +13,15 @@ module.exports.run = async (client, message, argument) => {
     .setTimestamp()
     .setFooter('Defensie', '');
 
+
+    var channel = message.member.guild.channels.cache.get("761879667124600842");
+
+    if (!channel) return
     
 
-return message.channel.send(botEmbed);
+    channel.send(botEmbed);
 
-    } else {
-        
-
-    message.channel.send("Gelieve dit command te doen bij een ticket.");
-    }
+  
 }
 
 module.exports.help = {
