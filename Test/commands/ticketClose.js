@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     const categoryID = "767843900823175168";
 
-    if (!message.member.hasPermission("KICK_MEMBER")) return message.reply("Jij kan dit niet doen");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
 
     if (message.channel.parentID == categoryID) {
 
