@@ -5,14 +5,14 @@ module.exports.run = async (client, message, argument) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
     
-    const categoryID = "760836476102639649";
+    const categoryID = "767842762090479646";
 
     
 
     if (message.channel.parentID == categoryID) {
 
     var botEmbed = new discord.MessageEmbed()
-    .setTitle('Regels')
+    .setTitle('Staff Regels')
     .setDescription(`Staff regels
 
     -Ben je voor een tijd niet actief meld dit dan in #『🔒』inactiviteit-log.
