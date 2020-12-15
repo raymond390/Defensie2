@@ -5,14 +5,14 @@ module.exports.run = async (client, message, args) => {
     var botEmbed = new discord.MessageEmbed()
             .setTitle('Informatie')
             .setColor("#0099ff")
-            .setDescription("Deze Bot is gemaakt bij Raymond#1362\nGame gemaakt bij ")
+            .setDescription("Deze Bot is gemaakt bij **Raymond#1362**\nGame gemaakt bij **𝐉𝐚𝐦𝐲𝐓𝐒𝐆ツ #3100**")
             .addFields(
               
             )
-            .setThumbnail('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg')
-            .setImage('https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg')
+            .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
+            .setImage('')
             .setTimestamp()
-            .setFooter('test', 'https://f.jwwb.nl/public/g/w/t/temp-mxahzxdricxvqfpwpnhx/lm5nsv/km.jpg');
+            .setFooter('Defensie', '');
 
         return message.channel.send(botEmbed);
 
