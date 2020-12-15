@@ -1,9 +1,9 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, argument) => {
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("sorry jij kan dit niet");
 
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+    if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("Geen perms");
     
     const categoryID = "767842762090479646";
 
@@ -45,7 +45,7 @@ return message.channel.send(botEmbed);
 }
 
 module.exports.help = {
-    name: "staff",
+    name: "staffregels",
     description: "Geeft al de verschillende commands",
     category: "Informatie"
 }
