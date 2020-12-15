@@ -104,10 +104,12 @@ client.on("guildMemberRemove", member => {
 });
 
 
-var activevar = ["Karzerne Noord-Holland", "", "", ""];
-var activities = activevar[Math.floor(Math.random()*activevar.length)];
-client.on('ready', () => {
-    client.user.setActivity(activities);
+client.on("ready", async () => {
+
+    console.log(`${client.user.username} is online.`);
+
+    client.user.setActivity("Kazerne Noord-Holland V2 {coming soon}", { type: "PLAYING" });
+
 });
 
 client.on("messageDelete", messageDeleted => {
