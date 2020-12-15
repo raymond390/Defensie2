@@ -12,10 +12,8 @@ module.exports.run = async (client, message, argument) => {
     if (message.channel.parentID == categoryID) {
 
     var botEmbed = new discord.MessageEmbed()
-    .setTitle('Regels')
-    .setDescription(`Ticket Informatie
-
-    Wil jij een ticket aanmaken? Dat kan doe dat in #『📫』tickets door .ticket te doen, het staff-team komt u dan zo snel mogelijk helpen! 
+    .setTitle('**Ticket Informatie**')
+    .setDescription(` Wil jij een ticket aanmaken? Dat kan doe dat in #『📫』tickets door .ticket te doen, het staff-team komt u dan zo snel mogelijk helpen! 
     
     Algemene Informatie
     De ticket bot kan soms offline zijn daarom zou het kunnen zijn dat de tickets zijn gesloten! Wanneer je een ticket aanmaakt en er wordt niet binnen 24 uur gereageerd mag je een HR+ taggen! Ga niet HR+ taggen als het nog geen 24 uur is geweest! We zullen zo snel mogelijk bij je komen om je te helpen! Als je toch een HR+ taggt en het is nog geen 24 uur is geweest is er kan op een warn!
