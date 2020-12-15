@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
      try {
 
-         var text = " \n\n  \n  \n ";
+         var text = " \n\n \n \n ";
 
          message.author.send(text);
 
