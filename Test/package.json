@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.1",
-    "ytdl-core": "^4.1.5"
+  "discord.js": "^12.5.1"
   }
 }
