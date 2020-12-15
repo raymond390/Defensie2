@@ -5,7 +5,7 @@ module.exports.run = async (client, message, argument) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
     
-    const categoryID = "767840049299062824";
+    const categoryID = "760836476102639649";
 
     
 
@@ -56,7 +56,7 @@ return message.channel.send(botEmbed);
 }
 
 module.exports.help = {
-    name: "regels",
+    name: "ticketinfo",
     description: "Geeft al de verschillende commands",
     category: "Informatie"
 }
