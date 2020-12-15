@@ -5,7 +5,7 @@ module.exports.run = async (client, message, argument) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
     
-    const categoryID = "767843900823175168";
+    const categoryID = "761879667124600842";
 
     
 
@@ -13,7 +13,7 @@ module.exports.run = async (client, message, argument) => {
 
     var botEmbed = new discord.MessageEmbed()
     .setTitle('Claim')
-    .setDescription("Je hebt deze ticket geclaimt")
+    .setDescription(`${message.author} Heeft deze ticket Geclaimed`)
 
     .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
     .setImage('')
