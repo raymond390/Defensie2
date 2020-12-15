@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     var botEmbed = new discord.MessageEmbed()
             .setTitle('Informatie')
             .setColor("#0099ff")
-            .setDescription("")
+            .setDescription("Deze Bot is gemaakt bij Raymond#1362\nGame gemaakt bij ")
             .addFields(
               
             )
