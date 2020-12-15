@@ -12,10 +12,10 @@ module.exports.run = async (client, message, argument) => {
     if (message.channel.parentID == categoryID) {
 
     var botEmbed = new discord.MessageEmbed()
-    .setTitle('Staff Regels')
-    .setDescription(`nederlandse 
+    .setTitle('Regels')
+    .setDescription(`**nederlandse**
     1,niet aubse met staff vesten.
-    2,niet tegen hoger staff in gaan zal je dit doen kan tot warn/demot leiden.
+    2,niet tegen hoger staff in gaan zal je dit doen kan tot warn/demote leiden.
     3,niet bemoien met jails van andere staff-leden.
     4,niet staff vest aan als je kamr/landmacht bent.!
     5,Luister altijd naar HR+&HC+.!
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, argument) => {
     11. geen hoger outfit aan
     12, niet als landmacht bij kmar staan of kmar bij landmacht.
     13, staff leden morgen niet meer on noding fly doen 
-    (ENGLES)-------------------------------------------------------------------------
+    (**ENGLES**)-------------------------------------------------------------------------
     1, please do not use staff vests.
     2, do not go against higher staff you will do this can lead to warn / demot.
     3, don't bother with other staff members' jails.
