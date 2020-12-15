@@ -56,9 +56,3 @@ return message.channel.send(botEmbed);
     message.channel.send("Gelieve dit command te doen bij een ticket.");
     }
 }
-
-module.exports.help = {
-    name: "regels",
-    description: "Geeft al de verschillende commands",
-    category: "Informatie"
-}
