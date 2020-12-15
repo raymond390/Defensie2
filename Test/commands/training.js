@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
      co = args[2];
      datum = args[3];
      tijd = args[4];
-     var opmerking = args.slice(1).join(" ");
+     var opmerking = args.slice(5).join(" ");
    
     if (!args[0]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
     if (!args[1]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
