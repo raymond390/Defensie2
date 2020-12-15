@@ -104,7 +104,7 @@ client.on("guildMemberRemove", member => {
 });
 
 
-var activevar = ["Karzerne Noord-Holland", ".help", "", ""];
+var activevar = ["Karzerne Noord-Holland", "", "", ""];
 var activities = activevar[Math.floor(Math.random()*activevar.length)];
 client.on('ready', () => {
     client.user.setActivity(activities);
