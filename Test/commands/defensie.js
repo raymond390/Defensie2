@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     var botEmbed = new discord.MessageEmbed()
             .setTitle('Defensie')
             .setColor("#0099ff")
-            .setDescription("werken bij defensie je moet het maar kunnen")
+            .setDescription("\nwerken bij defensie je moet het maar kunnen")
 
             .setThumbnail('https://yt3.ggpht.com/a/AGF-l7_P42jUnWAoIvDDHzQH27EIOs5hAoDAwfdgug=s900-c-k-c0xffffffff-no-rj-mo')
             .setImage('https://cdnv2.dropr.io/image/ko3HlIZsSTWbVyqKV_IcQg/wzCKzPiB/580x330/sf/28523e6b-8e66-4bb6-952a-1452567a9d0f.jpg?cache_buster=22553c66faffbdf97b4990a0f56aec78aa63d870')
