@@ -108,7 +108,7 @@ const activities_list = [
     "Kazerne Noord-Holland", 
     ".help",
     "Kazerne Noord-Holland", 
-    ".help"
+    "V2 Comming Soon"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
     
     client.on('ready', () => {
