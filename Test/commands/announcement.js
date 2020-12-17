@@ -36,7 +36,7 @@ module.exports.run = async (client, message, args) => {
     var announceEmbed = new discord.MessageEmbed()
         .setTitle(`${options.titel}`)
         .setColor(options.kleur)
-        .setDescription(`Bericht van ${message.author} \n ${options.bericht} \n `)
+        .setDescription(` ${options.bericht} \n Bericht van ${message.author} \n  `)
         .setTimestamp();
 
     var channel = message.member.guild.channels.cache.find(channels => channels.name === options.kanaal);
