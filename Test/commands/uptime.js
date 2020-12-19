@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
     hours %= 24;
 
     return message
-      .reply(`Uptime: \`${days} day(s),${hours} hours, ${minutes} minutes, ${seconds} seconds\``)
+      .reply(`Uptime: \`${days} Dagen,${hours} Uren, ${minutes} minuten, ${seconds} Seconden Word Soms Gereset\``)
       .catch(console.error);
   }
 
