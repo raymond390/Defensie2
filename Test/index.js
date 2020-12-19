@@ -105,10 +105,10 @@ client.on("guildMemberRemove", member => {
 
 
 const activities_list = [
-    "🎄V2 opening 19:00🎄", 
+    "🎈V2 opening 19:00🎈", 
     "🎄.help🎄",
     "🎄Kazerne Noord-Holland🎄", 
-    "🎄V2 opening 19:00🎄"
+    "🎈V2 opening 19:00🎈"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
     
     client.on('ready', () => {
