@@ -5,7 +5,7 @@ module.exports.run = async (client, message, argument) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
     
-    const categoryID = "767843900823175168";
+    const categoryID = "793468772778246144";
 
     
 
@@ -19,7 +19,7 @@ module.exports.run = async (client, message, argument) => {
     .setTimestamp()
     .setFooter('Defensie', '');
 
-    
+    message.channel.setTopic(`${message.author}: Heeft deze  ticket geclaimd`)
 
 return message.channel.send(botEmbed);
 
