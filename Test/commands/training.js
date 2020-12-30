@@ -11,12 +11,12 @@ module.exports.run = async (client, message, args) => {
      tijd = args[4];
      var opmerking = args.slice(5).join(" ");
    
-    if (!args[0]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
-    if (!args[1]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
-    if (!args[2]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
-    if (!args[3]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
-    if (!args[4]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen");
-    if (!args[5]) return message.reply("dienst-type-co host-datum-tijd-opmerkingen.");
+    if (!args[0]) return message.reply("dienst type cohost datum tijd opmerkingen");
+    if (!args[1]) return message.reply("dienst type cohost datum tijd opmerkingen");
+    if (!args[2]) return message.reply("dienst type cohost datum tijd opmerkingen");
+    if (!args[3]) return message.reply("dienst type cohost datum tijd opmerkingen");
+    if (!args[4]) return message.reply("dienst type cohost datum tijd opmerkingen");
+    if (!args[5]) return message.reply("dienst type cohost datum tijd opmerkingen.");
    
    
     var botEmbed = new discord.MessageEmbed()
@@ -47,6 +47,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "training",
-    description: ".training Type-type-co host-datum-tijd-opmerkingen",
+    description: ".training Type type cohost datum tijd opmerkingen",
     category: "Informatie"
 }
