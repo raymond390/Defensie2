@@ -1,23 +1,9 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-
-
-    
-        const categoryID = "793803088963567637";
-        var staff = "790291727889858570";
-        var person = message.author;
-
-        var userName = message.author.username;
-        var userDiscriminator = message.author.discriminator;
-    
-        var ticketBestaat = false;
-    
-      
-    
-        if (ticketBestaat) return;
     
         
+    
     
                     var embedParent = new discord.MessageEmbed()
                         .setTitle("Hoi" + message.author.username)
@@ -75,17 +61,21 @@ module.exports.run = async (client, message, args) => {
                         .setDescription("Wat is BSB")
                       
                         settedParent.send(message.author.id);
-                        settedParent.send(embedParent);
-                        settedParent.send(vraag0);
+                        channel.send(embedParent0);
+
+                        channel.send(vraag0);
+                    }
      
     
                         settedParent.awaitMessages(s => s.author.id == message.author.id, {max: 1}).then(antwoord => {
                             var antwoord0 = antwoord.first();;
-                            settedParent.send(vraag1);
+                            channel.send(vraag1);
+                        
      
                             settedParent.awaitMessages(s => s.author.id == message.author.id, {max: 1}).then(antwoord => {
                              var antwoord1 = antwoord.first();;
-                             settedParent.send(vraag2);
+                             channel.send(vraag2);
+                            
      
                              settedParent.awaitMessages(s => s.author.id == message.author.id, {max: 1}).then(antwoord => {
                                  var antwoord2 = antwoord.first();;
@@ -129,7 +119,7 @@ module.exports.run = async (client, message, args) => {
                                          
      
                                              settedParent.bulkDelete(14).then(
-                                                 settedParent.send(uitkomst)
+                                                channel.send(uitkomst)
                                              )
                                          })
                                      })
@@ -145,8 +135,7 @@ module.exports.run = async (client, message, args) => {
         
                     }
                     
-              
-    
+          
 
 
 module.exports.help = {
