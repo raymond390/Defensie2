@@ -61,7 +61,7 @@ module.exports.run = async (client, message, args) => {
                         .setDescription("Wat is BSB")
                       
                         settedParent.send(message.author.id);
-                        channel.send(embedParent0);
+                        channel.send(embedParent);
 
                         channel.send(vraag0);
                     }
