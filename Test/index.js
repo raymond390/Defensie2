@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 const database = require("./database.json");
-const command = require('./command')
+
 
 const activeSongs = new Map();
 
@@ -31,19 +31,7 @@ fs.readdir("./commands/", (err, files) => {
         console.log("Kon geen files vinden");
         return;
     }
-    
-    const readCommands = (dir) => {
-        const files = fs.readdirSync(path.join(__dirname, dir))
-        for (const file of files) {
-          const stat = fs.lstatSync(path.join(__dirname, dir, file))
-          if (stat.isDirectory()) {
-            readCommands(path.join(dir, file))
-          } else if (file !== baseFile) {
-            const option = require(path.join(__dirname, dir, file))
-            commandBase(client, option)
-          }
-        }
-      }
+
     jsFiles.forEach((f, i) => {
 
         var fileGet = require(`./commands/${f}`);
