@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "ping",
+    name: "ping test",
     description: "Geeft al de verschillende commands",
     category: "Informatie"
 }
