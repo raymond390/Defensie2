@@ -1,253 +1,207 @@
-const discord = require("discord.js");
-const botConfig = require("./botconfig.json");
-const database = require("./database.json");
+require('module-alias/register')
+
+//const Discord = require('discord.js')
+//const client = new Discord.Client()
+
+const patch = require('path')
+const Commando = require('discord.js-commando')
+const loadCommands = require('@root/commands/load-commands')
+const config = require('@root/config.json')
+const command = require('@util/command')
+const poll = require('@features/poll')
+const mongo = require('@util/mongo')
+const welcome = require('@features/welcome')
+const messageCount = require('@features/message-counter')
+const eval = require('@features/eval')
+const path = require('path')
+const fs = require('fs')
+const antiAd = require('@features/anti-ad')
+const inviteNotifications = require('@features/invite-notifications')
+const scaling = require('@features/scaling-channels')
+const economy = require('@features/economy')
+const { loadLanguages } = require('@util/language')
+const baseFile = 'command-base.js'
+const commandBase = require(`@root/commands/${baseFile}`)
 
 
-const activeSongs = new Map();
+const client = new Commando.CommandoClient({
+  owner: '590540346983710740',
+  commandPrefix: config.prefix,
+})
 
-//  Command handler
-const fs = require("fs");
-const { isFunction } = require("util");
+client.on('ready', () => {
+  console.log('The client is ready!')
 
-const client = new discord.Client();
+  client.registry
+  .registerGroups([
+    ['misc', 'misc commands'],
+    ['moderation', 'moderation commands'],
+    ['economy', 'Commands for the economy system'],
+    ['games', 'Commands to handle games'],
+    ['thanks', 'Commands to help thank people'],
+    ['suggestions', 'Commands regarding suggestions'],
+  ])
+  .registerDefaults()
+  .registerCommandsIn(path.join(__dirname, 'cmds'))
+
+  command(client, 'servers', (message) => {
+    client.guilds.cache.forEach((guild) => {
+      message.channel.send(
+        `${guild.name} has a total of ${guild.memberCount} members`
+      )
+    })
+  })
+
+  
+
+  const readCommands = (dir) => {
+    const files = fs.readdirSync(path.join(__dirname, dir))
+    for (const file of files) {
+      const stat = fs.lstatSync(path.join(__dirname, dir, file))
+      if (stat.isDirectory()) {
+        readCommands(path.join(dir, file))
+      } else if (file !== baseFile) {
+        const option = require(path.join(__dirname, dir, file))
+        commandBase(client, option)
+      }
+    }
+  }
+
+  
+
+  
+  poll(client)
+  welcome(client)
+  messageCount(client)
+  eval(client)
+  antiAd(client)
+  inviteNotifications(client)
+  scaling(client)
+  economy(client)
+  loadCommands(client)
+ 
+   mongo().then((mongoose) => {
+    try {
+      console.log('Connected to mongo!')
+    } finally {
+      mongoose.connection.close()
+    }
+  })
 
 
-//  Command handler
-client.commands = new discord.Collection();
+  command(client, 'embed', (message) => {
+    const logo =
+      'https://yt3.ggpht.com/a-/AOh14GgD43Ka7oxkCrxPAXiIuY8-rG3Kb4h9dQuhulOH=s100-c-k-c0xffffffff-no-rj-mo'
 
+    const embed = new Discord.MessageEmbed()
+      .setTitle('Example text embed')
+      .setURL('https://www.youtube.com/channel/UChPrh75CmPP9Ig6jISPnfNA')
+      .setAuthor(message.author.username)
+      .setImage(logo)
+      .setThumbnail(logo)
+      .setFooter('This is a footer')
+      .setColor('#00AAFF')
+      .addFields(
+        {
+          name: 'Field 1',
+          value: 'Hello world',
+          inline: true,
+        },
+        {
+          name: 'Field 2',
+          value: 'Hello world',
+          inline: true,
+        },
+        {
+          name: 'Field 3',
+          value: 'Hello world',
+          inline: true,
+        },
+        {
+          name: 'Field 4',
+          value: 'Hello world',
+        }
+      )
+
+    message.channel.send(embed)
+  })
+
+
+  
+  
+ 
+  command(client, 'ban', (message) => {
+    const { member, mentions } = message
+
+    const tag = `<@${member.id}>`
+
+    if (
+      member.hasPermission('ADMINISTRATOR') ||
+      member.hasPermission('BAN_MEMBERS')
+    ) {
+      const target = mentions.users.first()
+      if (target) {
+        const targetMember = message.guild.members.cache.get(target.id)
+        targetMember.ban()
+        message.channel.send(`${tag} That user has been`)
+      } else {
+        message.channel.send(`${tag} Please specify someone to ban.`)
+      }
+    } else {
+      message.channel.send(
+        `${tag} You do not have permission to use this command.`
+      )
+    }
+  })
+
+    
+
+  command(client, ['clear', 'clearchannel'], (message) => {
+    if (message.member.hasPermission('ADMINISTRATOR')) {
+      message.channel.messages.fetch().then((results) => {
+        message.channel.bulkDelete(results)
+      })
+    }
+  })
+
+  command(client, 'createtextchannel', (message) => {
+    const name = message.content.replace('!createtextchannel ', '')
+
+    message.guild.channels
+      .create(name, {
+        type: 'text',
+      })
+      .then((channel) => {
+        const categoryId = '757998148969824378'
+        channel.setParent(categoryId)
+      })
+  })
+
+  command(client, 'createvoicechannel', (message) => {
+    const name = message.content.replace('!createvoicechannel ', '')
+
+    message.guild.channels
+      .create(name, {
+        type: 'voice',
+      })
+      .then((channel) => {
+        const categoryId = '757998148969824378'
+        channel.setParent(categoryId)
+        channel.setUserLimit(10)
+      })
+    })
+
+  command(client, 'status', (message) => {
+    const content = message.content.replace('!status ', '')
+    // "!status hello world" -> "hello world"
+
+    client.user.setPresence({
+      activity: {
+        name: content,
+        type: 0,
+      },
+    })
+  })
+})
 
 client.login(process.env.token);
-
-
-
-//  Command handler
-fs.readdir("./commands/", (err, files) => {
-
-    if (err) console.log(err);
-
-    var jsFiles = files.filter(f => f.split(".").pop() === "js");
-
-    if (jsFiles.length <= 0) {
-        console.log("Kon geen files vinden");
-        return;
-    }
-
-    jsFiles.forEach((f, i) => {
-
-        var fileGet = require(`./commands/${f}`);
-        console.log(`De file ${f} is geladen`);
-
-        client.commands.set(fileGet.help.name, fileGet);
-    });
-
-});
-
-
-client.on("guildMemberAdd", member => {
-
-     var role = member.guild.roles.cache.get('462166173690232842');
-
-     if (!role) return;
-
-     member.roles.add(role);
-
-
-    con.query(`SELECT IDRole FROM rollen WHERE IDUser = '${member.user.id}'`, (err, rows) => {
-
-        if (err) throw err;
-
-        if (rows.length > 0) {
-
-            for (let index = 0; index < rows.length; index++) {
-                const role = rows[index];
-
-                member.roles.add(role.IDRole);
-            }
-
-        }
-
-    });
-
-
-    var channel = member.guild.channels.cache.get('778300362607951912');
-
-    if (!channel) return;
-
-    // channel.send(`Welkom bij de server ${member}`);
-
-    var joinEmbed = new discord.MessageEmbed()
-        .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-        .setDescription(`Hoi ${member.user.username}, **Welkom op de server**`)
-        .setColor("#00FF00")
-        .setFooter("Gebruiker gejoined")
-        .setTimestamp();
-
-    channel.send(joinEmbed);
-
-});
-
-
-client.on("guildMemberAdd", member => {
-
-    // var role = member.guild.roles.cache.get('462166173690232842');
-
-    // if (!role) return;
-
-    // member.roles.add(role);
-
-
-    con.query(`SELECT IDRole FROM rollen WHERE IDUser = '${member.user.id}'`, (err, rows) => {
-
-        if (err) throw err;
-
-        if (rows.length > 0) {
-
-            for (let index = 0; index < rows.length; index++) {
-                const role = rows[index];
-
-                member.roles.add(role.IDRole);
-            }
-
-        }
-
-    });
-
-
-    var channel = member.guild.channels.cache.get('784428322838937690');
-
-    if (!channel) return;
-
-    // channel.send(`Welkom bij de server ${member}`);
-
-    var joinEmbed = new discord.MessageEmbed()
-        .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-        .setDescription(`Hoi ${member.user.username}, **Welkom op de server**`)
-        .setColor("#00FF00")
-        .setFooter("Gebruiker gejoined")
-        .setTimestamp();
-
-    channel.send(joinEmbed);
-
-});
-
-
-const activities_list = [
-    "Kazerne Noord-Holland", 
-    ".help",
-    "Kazerne Noord-Holland", 
-    ".help"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
-    
-    client.on('ready', () => {
-        setInterval(() => {
-            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-            client.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
-        }, 2500); // Runs this every 10 seconds.
-    
-});
-
-client.on("messageDelete", messageDeleted => {
-
-    if (messageDeleted.author.bot) return;
-
-    var content = messageDeleted.content;
-    if (!content) content = "Geen tekst te vinden";
-
-    var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel}\n **Bericht:** ${content}`;
-
-    var embed = new discord.MessageEmbed()
-        .setAuthor(`${messageDeleted.author.id} ${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({ size: 4096 })}`)
-        .setDescription(respone)
-        .setTimestamp()
-        .setColor("#FF0000");
-
-    client.channels.cache.find(c => c.name == "log")
-
-});
-
-
-var swearWords = ["koe", "kalf", "varken"];
-
-client.on("message", async message => {
-
-    if (message.author.bot) return;
-
-    if (message.channel.type === "dm") return;
-
-
-     var msg = message.content.toLowerCase();
-
-     for (let i = 0; i < swearWords; i++) {
-
-         if (msg.includes(swearWords[i])) {
-
-             message.delete();
-
-             return message.reply("Gelieve niet te vloeken").then(msg => msg.delete({ timeout: 3000 }));
-
-         }
-
-     }
-
-
-    var prefix = botConfig.prefix;
-
-    var messageArray = message.content.split(" ");
-
-
-    var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"));
-
-    var senteceUser = "";
-    var amountSwearWords = 0;
-
-    for (let y = 0; y < messageArray.length; y++) {
-
-        const word = messageArray[y].toLowerCase();
-
-        var changeWord = "";
-
-        for (let i = 0; i < swearWords["vloekwoorden"].length; i++) {
-
-            if (word.includes(swearWords["vloekwoorden"][i])) {
-
-                changeWord = word.replace(swearWords["vloekwoorden"][i], "******");
-
-                senteceUser += " " + changeWord;
-
-                amountSwearWords++;
-
-            }
-
-        }
-
-        if (!changeWord) {
-            senteceUser += " " + messageArray[y];
-        }
-
-    }
-
-    if (amountSwearWords != 0) {
-
-        message.delete();
-        message.channel.send(senteceUser);
-        message.channel.send("Niet vloeken a.u.b.");
-    }
-
-
-
-    var command = messageArray[0];
-
-    if (!message.content.startsWith(prefix)) return;
-
-    //  Command handler
-    var arguments = messageArray.slice(1);
-
-    var commands = client.commands.get(command.slice(prefix.length));
-
-    var options = {
-        active: activeSongs
-    };
-
-    if (commands) commands.run(client, message, arguments, options);
-
-});
